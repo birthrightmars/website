@@ -35,7 +35,6 @@
             justify-content: space-between;
             padding: 0 5%;
         }
-        /* Navigation links – now using the Nasalization font */
         #nav-links {
             list-style: none;
             display: flex;
@@ -49,7 +48,7 @@
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
-            font-family: 'Nasalization', Arial, sans-serif;  /* Apply Nasalization font */
+            font-family: 'Nasalization', Arial, sans-serif;
         }
         #nav-links li a:hover {
             text-decoration: underline;
@@ -93,7 +92,7 @@
             color: white;
             text-align: center;
             padding: 1.5rem 5%;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
             margin-top: 60px;
         }
         header img {
@@ -129,7 +128,7 @@
             margin-bottom: 1rem;
             color: white;
             border-bottom: 2px solid #004080;
-            font-family: 'Nasalization', Arial, sans-serif; /* Use Nasalization for the banner title */
+            font-family: 'Nasalization', Arial, sans-serif;
         }
         .banner-content p {
             font-size: 1.2rem;
@@ -200,7 +199,9 @@
         /* Wrap the Roadmap text in a container restricted to 50% of the viewport width */
         .roadmap-content {
             max-width: 50vw;
-            padding-left: 0;
+            /* On larger screens, the container is left aligned.
+               On smaller screens, we’ll center it via a media query below. */
+            margin-left: 0;
         }
         /* Ensure child elements inherit our text styles */
         #roadmap h2,
@@ -244,6 +245,10 @@
             opacity: 0.3;
             z-index: -1;
             pointer-events: none;
+        }
+        /* Roadmap mobile image – hidden by default */
+        .roadmap-mobile {
+            display: none;
         }
         /* Footer */
         footer {
@@ -309,6 +314,39 @@
         #feedback-modal button {
             font-size: 1rem;
             padding: 15px 25px;
+        }
+        /* Apply Nasalization to all section titles */
+        .banner-content h2,
+        #goals h2,
+        #roadmap h2,
+        footer h3 {
+            font-family: 'Nasalization', Arial, sans-serif;
+        }
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .roadmap-content {
+                max-width: 90vw;
+                margin: 0 auto;
+                text-align: center;
+            }
+            #roadmap h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90vw;
+            }
+            /* On mobile, hide the pseudo-element background and show the inline image below the text */
+            #roadmap::before {
+                display: none;
+            }
+            .roadmap-mobile {
+                display: block;
+                /* Make the image full width of the viewport, breaking out of the main content padding */
+                width: 100vw;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                margin: 20px 0 0;
+            }
         }
     </style>
 </head>
@@ -382,6 +420,8 @@
                 <li><strong>2037 and Beyond:</strong> Continuous innovation and collaboration to expand Martian settlements and ensure prosperity.</li>
             </ul>
         </div>
+        <!-- Inline roadmap image for mobile -->
+        <img class="roadmap-mobile" src="Assets/roadMap.png" alt="Roadmap">
     </section>
 </main>
 <!-- Footer (Feedback Section) -->
