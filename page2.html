@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthright Mars - Page 2</title>
+
+  <!-- Favicon (SVG) -->
+  <link rel="icon" type="image/svg+xml" href="Assets/birthrightMars_fav.svg">
+
+  <!-- Open Graph Meta Tags for Social Media Preview -->
+  <meta property="og:title" content="Birthright Mars - Page 2">
+  <meta property="og:description" content="Securing the Future of Martian Born Americans">
+  <meta property="og:image" content="Assets/birthrightMars_card.png">
+  <meta property="og:url" content="https://www.yoursite.com/page2.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Birthright Mars - Page 2">
+  <meta name="twitter:description" content="Securing the Future of Martian Born Americans">
+  <meta name="twitter:image" content="Assets/birthrightMars_card.png">
+
+  <style>
+    @font-face {
+      font-family: 'Nasalization';
+      src: url('Fonts/Nasalization Rg.otf') format('opentype');
+    }
+    /* Global Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      scroll-behavior: smooth;
+    }
+    /* Fixed Navigation Bar */
+    #navbar {
+      background-color: #004080;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      z-index: 2100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+    }
+    #nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    #nav-links li {
+      margin: 0 1rem;
+    }
+    #nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-family: 'Nasalization', Arial, sans-serif;
+    }
+    #nav-links li a:hover {
+      text-decoration: underline;
+    }
+    /* Hamburger menu – visible on mobile */
+    #menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    #menu-toggle .bar {
+      background-color: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+    @media (max-width: 768px) {
+      #menu-toggle {
+        display: flex;
+      }
+      #nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #004080;
+        flex-direction: column;
+        display: none;
+      }
+      #nav-links li {
+        margin: 1rem 0;
+        text-align: center;
+      }
+      #nav-links.open {
+        display: flex;
+      }
+    }
+    /* Main Content */
+    main {
+      padding: 1.25rem 10%;
+      margin-top: 60px; /* Offset for the fixed navbar */
+    }
+    main section {
+      margin-bottom: 2rem;
+    }
+    main section h2 {
+      color: #002855;
+      border-bottom: 2px solid #004080;
+      padding-bottom: 5px;
+      font-family: 'Nasalization', Arial, sans-serif;
+    }
+    main section p {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+    /* Footer */
+    footer {
+      background-color: #002855;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    footer input, footer textarea {
+      width: 50%;
+      max-width: 300px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    footer button {
+      background-color: #004080;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer button:hover {
+      background-color: white;
+      color: #004080;
+    }
+    footer p.disclaimer {
+      font-size: 0.7rem;
+      margin-top: 10px;
+    }
+    /* Feedback Modal */
+    #feedback-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 3000;
+      justify-content: center;
+      align-items: center;
+    }
+    #feedback-modal div {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    #feedback-modal button {
+      font-size: 1rem;
+      padding: 15px 25px;
+    }
+  </style>
+</head>
+<body>
+<!-- Fixed Navigation Bar -->
+<div id="navbar">
+  <div id="menu-toggle">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <ul id="nav-links">
+    <li><a href="index.html#mission">Mission Statement</a></li>
+    <li><a href="index.html#goals">Goals</a></li>
+    <li><a href="index.html#roadmap">Roadmap</a></li>
+    <li><a href="index.html#feedback">Feedback</a></li>
+    <li><a href="page2.html">Page 2</a></li>
+  </ul>
+</div>
+
+<!-- Main Content (Placeholder for Page 2) -->
+<main>
+  <section>
+    <h2>Coming Soon</h2>
+    <p>This page is under construction. Please check back later for updates.</p>
+  </section>
+</main>
+
+<!-- Footer (Feedback Section) -->
+<footer id="feedback">
+  <h3>Feedback</h3>
+  <form id="feedback-form">
+    <input type="text" placeholder="Name">
+    <textarea placeholder="Your Message"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+  <p>&copy; 2025 Birthright Mars. All rights reserved.</p>
+  <p class="disclaimer">
+    Disclaimer: This website is fictional and not affiliated with the United States government, NASA, or any official agency. It is intended for informational and entertainment purposes only.
+  </p>
+</footer>
+
+<!-- Feedback Modal -->
+<div id="feedback-modal">
+  <div>
+    <h3>Thank You For Your Feedback!</h3>
+    <button id="close-modal">Close</button>
+  </div>
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  document.querySelectorAll('#nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove('open');
+      }
+    });
+  });
+
+  const feedbackForm = document.getElementById('feedback-form');
+  const feedbackModal = document.getElementById('feedback-modal');
+  const closeModal = document.getElementById('close-modal');
+  feedbackForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    feedbackModal.style.display = 'flex';
+    feedbackForm.reset();
+  });
+  closeModal.addEventListener('click', () => {
+    feedbackModal.style.display = 'none';
+  });
+</script>
+</body>
+</html>
