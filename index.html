@@ -99,7 +99,8 @@
                 margin: 1rem 0;
                 text-align: center;
             }
-            #nav-links.open {
+            /* Renamed the selector from .open to .menu-open */
+            #nav-links.menu-open {
                 display: flex;
             }
         }
@@ -446,8 +447,8 @@
 <footer id="feedback">
     <h3>Feedback</h3>
     <form id="feedback-form">
-        <input type="text" placeholder="Name">
-        <textarea placeholder="Your Message"></textarea>
+        <input type="text" placeholder="Name" aria-label="Name">
+        <textarea placeholder="Your Message" aria-label="Your Message"></textarea>
         <button type="submit">Submit</button>
     </form>
     <p>&copy; 2025 Birthright Mars. All rights reserved.</p>
@@ -466,12 +467,13 @@
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
     menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
+        // Toggle the 'menu-open' class instead of 'open'
+        navLinks.classList.toggle('menu-open');
     });
     document.querySelectorAll('#nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth <= 768) {
-                navLinks.classList.remove('open');
+                navLinks.classList.remove('menu-open');
             }
         });
     });
