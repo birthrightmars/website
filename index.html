@@ -165,21 +165,8 @@
         main {
             padding: 1.25rem 10%;
         }
-        section h2 {
-            color: #002855;
-            border-bottom: 2px solid #004080;
-            padding-bottom: 5px;
-        }
-        section p, section ul {
-            margin-bottom: 1rem;
-        }
-        section ul {
-            margin-left: 2rem;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        /* Goals Section – Grouped in Columns */
+        /* Our Mission section is the banner-section (id="mission") */
+        /* Priorities section (formerly Goals) */
         #goals {
             margin-bottom: 2rem;
         }
@@ -190,54 +177,22 @@
             margin-bottom: 1rem;
             font-family: 'Nasalization', Arial, sans-serif;
         }
-        #goals .goal-groups {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: space-between;
-        }
-        #goals .goal-group {
-            flex: 1;
-            min-width: 250px;
-        }
-        #goals .goal-group h3 {
-            margin-bottom: 1rem;
-            font-family: 'Nasalization', Arial, sans-serif;
-        }
-        /* Roadmap Section – Text over Background Image */
+        /* Path Forward section (formerly Roadmap) */
         #roadmap {
             position: relative;
-            padding: 2rem 0;  /* Only vertical padding */
+            padding: 2rem 0;
             z-index: 0;
             text-align: left !important;
             color: black !important;
             text-shadow: none !important;
             font-family: 'Nasalization', Arial, sans-serif;
         }
-        /* Wrap the Roadmap text in a container restricted to 50% of the viewport width */
-        .roadmap-content {
-            max-width: 50vw;
-            /* On larger screens, the container is left aligned.
-               On smaller screens, we’ll center it via a media query below. */
-            margin-left: 0;
-        }
-        /* Ensure child elements inherit our text styles */
-        #roadmap h2,
-        #roadmap p,
-        #roadmap ul,
-        #roadmap li {
-            text-align: left !important;
-            color: black !important;
-            text-shadow: none !important;
-            font-family: 'Nasalization', Arial, sans-serif;
-        }
-        /* Extra space below the Roadmap heading’s underline */
         #roadmap h2 {
             margin-bottom: 20px !important;
             position: relative;
             border-bottom: none;
+            font-family: 'Nasalization', Arial, sans-serif;
         }
-        /* Decorative line under Roadmap heading spanning 50% of viewport width, aligned to the left */
         #roadmap h2::after {
             content: "";
             position: absolute;
@@ -247,26 +202,14 @@
             height: 2px;
             background-color: #004080;
         }
-        /* Background image via pseudo-element now spans the full viewport width */
-        #roadmap::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100vw;
-            height: 100%;
-            background-image: url('Assets/roadMap.png');
-            background-position: center calc(50% + 20px);
-            background-size: cover;
-            background-repeat: no-repeat;
-            opacity: 0.3;
-            z-index: -1;
-            pointer-events: none;
+        section p, section ul {
+            margin-bottom: 1rem;
         }
-        /* Roadmap mobile image – hidden by default */
-        .roadmap-mobile {
-            display: none;
+        section ul {
+            margin-left: 2rem;
+        }
+        ul li {
+            margin-bottom: 10px;
         }
         /* Footer */
         footer {
@@ -300,13 +243,13 @@
             background-color: white;
             color: #004080;
         }
-        /* Add extra space under the submit button in the feedback section */
-        #feedback p:first-of-type {
-            margin-top: 20px;
-        }
         footer p.disclaimer {
             font-size: 0.7rem;
             margin-top: 10px;
+        }
+
+        footer p.copyright {
+            padding-top: 30px;  /* Adjust the value as needed */
         }
         /* Feedback Modal */
         #feedback-modal {
@@ -340,7 +283,6 @@
         footer h3 {
             font-family: 'Nasalization', Arial, sans-serif;
         }
-        /* Mobile adjustments */
         @media (max-width: 768px) {
             .roadmap-content {
                 max-width: 90vw;
@@ -352,13 +294,11 @@
                 transform: translateX(-50%);
                 width: 90vw;
             }
-            /* On mobile, hide the pseudo-element background and show the inline image below the text */
             #roadmap::before {
                 display: none;
             }
             .roadmap-mobile {
                 display: block;
-                /* Make the image full width of the viewport, breaking out of the main content padding */
                 width: 100vw;
                 position: relative;
                 left: 50%;
@@ -377,11 +317,11 @@
         <div class="bar"></div>
     </div>
     <ul id="nav-links">
-        <li><a href="#mission">Mission Statement</a></li>
-        <li><a href="#goals">Goals</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="#feedback">Feedback</a></li>
-        <li><a href="page2.html">Page 2</a></li>  <!-- Link to Page 2 -->
+        <li><a href="#mission">Our Mission</a></li>
+        <li><a href="#goals">Priorities</a></li>
+        <li><a href="#roadmap">Path Forward</a></li>
+        <!-- Removed the "Feedback" nav link -->
+        <li><a href="page2.html">Get Involved</a></li>
     </ul>
 </div>
 <!-- Blue Header with Logo and Title -->
@@ -390,60 +330,59 @@
     <h1>Birthright Mars</h1>
     <p>Securing the Future of Martian Born Americans</p>
 </header>
-<!-- Banner Section with Mission Statement on the Right -->
+<!-- Banner Section (Our Mission) -->
 <section class="banner-section" id="mission">
     <div class="banner-content">
-        <h2>Mission Statement</h2>
+        <h2>Our Mission</h2>
         <p>
-            To secure the rights, freedoms, and opportunities of every American born on Mars, ensuring they are recognized and protected under the laws and values of the United States. As pioneers in interplanetary life, we commit to leading humanity's expansion into space, promoting innovation, and maintaining America's leadership and prosperity in the final frontier.
+            At Birthright Mars, our mission is clear: to champion the American pioneering spirit by securing the rights, freedoms, and opportunities of every citizen—whether born on Earth or Mars. We are committed to extending the enduring values and robust legal protections that have made our nation great into the final frontier. As the vanguard of interplanetary exploration, we will harness American innovation and resolve to lead humanity toward a new era of prosperity and discovery.
         </p>
     </div>
 </section>
 <!-- Main Content -->
 <main>
-    <!-- Goals Section (Grouped in Columns) -->
+    <!-- Priorities Section -->
     <section id="goals" style="margin-bottom: 2rem;">
-        <h2>Goals</h2>
+        <h2>Priorities</h2>
         <div class="goal-groups">
             <div class="goal-group">
                 <h3>Governance</h3>
                 <ul>
-                    <li>Establish a legal framework to recognize and protect Martian-born citizens.</li>
-                    <li>Position the United States as a leader in interplanetary governance and innovation.</li>
+                    <li>Establish a robust legal framework: Develop comprehensive U.S.-based laws that recognize and protect Martian-born citizens as full Americans.</li>
+                    <li>Lead in interplanetary governance: Position the United States as the global standard-bearer in space law and policy, ensuring that American principles guide our expansion into the cosmos.</li>
                 </ul>
             </div>
             <div class="goal-group">
                 <h3>Sustainability</h3>
                 <ul>
-                    <li>Promote sustainable living technologies to support life on Mars.</li>
-                    <li>Ensure access to education, healthcare, and basic rights for Martian residents.</li>
+                    <li>Innovate for self-sufficiency: Drive cutting-edge American technologies that enable sustainable living on Mars and secure a prosperous future.</li>
+                    <li>Enhance quality of life: Guarantee that every Martian settlement benefits from advancements in education, healthcare, and fundamental rights—all built on the foundation of American excellence.</li>
                 </ul>
             </div>
             <div class="goal-group">
                 <h3>Community</h3>
                 <ul>
-                    <li>Foster cultural identity and community among Martian settlers.</li>
+                    <li>Forge a united frontier: Cultivate a strong, culturally rich American community on Mars that reflects the pioneering values and shared destiny of our nation.</li>
                 </ul>
             </div>
         </div>
     </section>
-    <!-- Roadmap Section -->
+    <!-- Path Forward Section -->
     <section id="roadmap">
-        <h2>Roadmap</h2>
+        <h2>Path Forward</h2>
         <div class="roadmap-content">
             <ul>
-                <li><strong>2025:</strong> Birthright Mars agency established by U.S. law.</li>
-                <li><strong>2026-2028:</strong> Development of legal frameworks for Martian citizenship and rights.</li>
-                <li><strong>2029-2035:</strong> Launch of pilot programs for Martian education, healthcare, and infrastructure support.</li>
-                <li><strong>2036:</strong> First generation of Martian-born Americans receives full recognition and rights under U.S. law.</li>
-                <li><strong>2037 and Beyond:</strong> Continuous innovation and collaboration to expand Martian settlements and ensure prosperity.</li>
+                <li><strong>2025:</strong> The Birthright Mars agency is established under U.S. law, marking America’s official launch into interplanetary governance.</li>
+                <li><strong>2026-2028:</strong> Develop and implement comprehensive legal frameworks to define Martian citizenship and secure the rights of American pioneers.</li>
+                <li><strong>2029-2035:</strong> Launch innovative pilot programs in education, healthcare, and infrastructure that lay the groundwork for sustainable, American-led settlements on Mars.</li>
+                <li><strong>2036:</strong> The first generation of Martian-born Americans is formally recognized as full citizens of the United States—affirming our commitment to extending American values beyond Earth.</li>
+                <li><strong>2037 and Beyond:</strong> Continuous American innovation and strategic leadership drive the expansion of Martian settlements, ensuring a dynamic, prosperous future for our nation.</li>
             </ul>
         </div>
-        <!-- Inline roadmap image for mobile -->
         <img class="roadmap-mobile" src="Assets/roadMap.png" alt="Roadmap">
     </section>
 </main>
-<!-- Footer (Feedback Section) -->
+<!-- Footer (Feedback Section remains) -->
 <footer id="feedback">
     <h3>Feedback</h3>
     <form id="feedback-form">
@@ -451,9 +390,9 @@
         <textarea placeholder="Your Message" aria-label="Your Message"></textarea>
         <button type="submit">Submit</button>
     </form>
-    <p>&copy; 2025 Birthright Mars. All rights reserved.</p>
+    <p class="copyright">&copy; 2025 Birthright Mars. All rights reserved.</p>
     <p class="disclaimer">
-        Disclaimer: This website is fictional and not affiliated with the United States government, NASA, or any official agency. It is intended for informational and entertainment purposes only.
+        Disclaimer: Birthright Mars is an independent advocacy organization dedicated to advancing America’s interests in space. This website is for informational and entertainment purposes only and is not affiliated with the United States government, NASA, or any official agency.
     </p>
 </footer>
 <!-- Feedback Modal -->
@@ -467,7 +406,6 @@
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
     menuToggle.addEventListener('click', () => {
-        // Toggle the 'menu-open' class instead of 'open'
         navLinks.classList.toggle('menu-open');
     });
     document.querySelectorAll('#nav-links a').forEach(link => {

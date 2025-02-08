@@ -158,6 +158,9 @@
       font-size: 0.7rem;
       margin-top: 10px;
     }
+    footer p.copyright {
+      padding-top: 30px;  /* Adjust the value as needed */
+    }
     /* Feedback Modal */
     #feedback-modal {
       display: none;
@@ -194,11 +197,12 @@
     <div class="bar"></div>
   </div>
   <ul id="nav-links">
-    <li><a href="index.html#mission">Mission Statement</a></li>
-    <li><a href="index.html#goals">Goals</a></li>
-    <li><a href="index.html#roadmap">Roadmap</a></li>
-    <li><a href="index.html#feedback">Feedback</a></li>
-    <li><a href="page2.html">Page 2</a></li>
+    <!-- Updated links: these point to index.html for the main sections -->
+    <li><a href="index.html#mission">Our Mission</a></li>
+    <li><a href="index.html#goals">Priorities</a></li>
+    <li><a href="index.html#roadmap">Path Forward</a></li>
+    <!-- Removed the feedback nav link -->
+    <li><a href="page2.html">Get Involved</a></li>
   </ul>
 </div>
 
@@ -210,7 +214,7 @@
   </section>
 </main>
 
-<!-- Footer (Feedback Section) -->
+<!-- Footer (Feedback Section remains) -->
 <footer id="feedback">
   <h3>Feedback</h3>
   <form id="feedback-form">
@@ -218,7 +222,7 @@
     <textarea placeholder="Your Message" aria-label="Your Message"></textarea>
     <button type="submit">Submit</button>
   </form>
-  <p>&copy; 2025 Birthright Mars. All rights reserved.</p>
+  <p class="copyright">&copy; 2025 Birthright Mars. All rights reserved.</p>
   <p class="disclaimer">
     Disclaimer: This website is fictional and not affiliated with the United States government, NASA, or any official agency. It is intended for informational and entertainment purposes only.
   </p>
