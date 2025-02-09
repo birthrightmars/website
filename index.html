@@ -4,18 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Birthright Mars</title>
-
-    <!-- Favicon (SVG) -->
     <link rel="icon" type="image/svg+xml" href="Assets/birthrightMars_fav.svg">
 
-    <!-- Open Graph Meta Tags for Social Media Preview -->
+    <!-- Open Graph & Twitter Meta Tags -->
     <meta property="og:title" content="Birthright Mars">
     <meta property="og:description" content="Securing the Future of Martian Born Americans">
     <meta property="og:image" content="Assets/birthrightMars_card.png">
     <meta property="og:url" content="https://www.yoursite.com">
     <meta property="og:type" content="website">
-
-    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Birthright Mars">
     <meta name="twitter:description" content="Securing the Future of Martian Born Americans">
@@ -36,6 +32,7 @@
             overflow-x: hidden;
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
+            color: #002855;
             scroll-behavior: smooth;
         }
         /* Fixed Navigation Bar */
@@ -70,7 +67,7 @@
         #nav-links li a:hover {
             text-decoration: underline;
         }
-        /* Hamburger menu – visible on mobile */
+        /* Hamburger Menu – Mobile */
         #menu-toggle {
             display: none;
             flex-direction: column;
@@ -99,7 +96,6 @@
                 margin: 1rem 0;
                 text-align: center;
             }
-            /* Renamed the selector from .open to .menu-open */
             #nav-links.menu-open {
                 display: flex;
             }
@@ -110,7 +106,7 @@
             color: white;
             text-align: center;
             padding: 1.5rem 5%;
-            box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
             margin-top: 60px;
         }
         header img {
@@ -125,7 +121,7 @@
             font-size: 1rem;
             margin: 0;
         }
-        /* Banner Section with Mission Statement on the Right */
+        /* Banner Section */
         .banner-section {
             position: relative;
             background: url('Assets/marsBanner.png') center/cover no-repeat;
@@ -164,20 +160,24 @@
         /* Main Content */
         main {
             padding: 1.25rem 10%;
+            margin-top: 60px;
         }
-        /* Our Mission section is the banner-section (id="mission") */
-        /* Priorities section (formerly Goals) */
-        #goals {
+        main section {
             margin-bottom: 2rem;
         }
-        #goals h2 {
+        main section h2 {
             color: #002855;
             border-bottom: 2px solid #004080;
             padding-bottom: 5px;
-            margin-bottom: 1rem;
             font-family: 'Nasalization', Arial, sans-serif;
+            margin-bottom: 1rem;
         }
-        /* Path Forward section (formerly Roadmap) */
+        main section p {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        /* Roadmap Section (Path Forward) */
         #roadmap {
             position: relative;
             padding: 2rem 0;
@@ -202,14 +202,60 @@
             height: 2px;
             background-color: #004080;
         }
-        section p, section ul {
-            margin-bottom: 1rem;
+        /* Roadmap Background on Desktop */
+        #roadmap::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100%;
+            background-image: url('Assets/roadMap.png');
+            background-position: center calc(50% + 20px);
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            z-index: -1;
+            pointer-events: none;
         }
-        section ul {
-            margin-left: 2rem;
+        /* Inline Roadmap Image for Mobile */
+        .roadmap-mobile {
+            display: none;
         }
-        ul li {
-            margin-bottom: 10px;
+        @media (max-width: 768px) {
+            #roadmap::before {
+                display: none;
+            }
+            .roadmap-mobile {
+                display: block;
+                width: 100vw;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                margin: 20px 0 0;
+            }
+        }
+        /* Restrict the width of the Path Forward content on desktop */
+        .roadmap-content {
+            max-width: 50vw;
+            margin: 0; /* Left-aligned */
+        }
+        @media (max-width: 768px) {
+            .roadmap-content {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+        /* Circular About Image */
+        .about-image {
+            float: right;
+            width: 200px;
+            height: 200px;
+            margin: 50px 0 1rem 1rem;
+            border-radius: 50%;
+            shape-outside: circle();
+            opacity: 0.8;
         }
         /* Footer */
         footer {
@@ -247,9 +293,8 @@
             font-size: 0.7rem;
             margin-top: 10px;
         }
-
         footer p.copyright {
-            padding-top: 30px;  /* Adjust the value as needed */
+            padding-top: 30px;
         }
         /* Feedback Modal */
         #feedback-modal {
@@ -276,35 +321,10 @@
             font-size: 1rem;
             padding: 15px 25px;
         }
-        /* Apply Nasalization to all section titles */
-        .banner-content h2,
-        #goals h2,
-        #roadmap h2,
+        /* Headings */
+        main section h2,
         footer h3 {
             font-family: 'Nasalization', Arial, sans-serif;
-        }
-        @media (max-width: 768px) {
-            .roadmap-content {
-                max-width: 90vw;
-                margin: 0 auto;
-                text-align: center;
-            }
-            #roadmap h2::after {
-                left: 50%;
-                transform: translateX(-50%);
-                width: 90vw;
-            }
-            #roadmap::before {
-                display: none;
-            }
-            .roadmap-mobile {
-                display: block;
-                width: 100vw;
-                position: relative;
-                left: 50%;
-                transform: translateX(-50%);
-                margin: 20px 0 0;
-            }
         }
     </style>
 </head>
@@ -317,19 +337,20 @@
         <div class="bar"></div>
     </div>
     <ul id="nav-links">
-        <li><a href="#mission">Our Mission</a></li>
-        <li><a href="#goals">Priorities</a></li>
-        <li><a href="#roadmap">Path Forward</a></li>
-        <!-- Removed the "Feedback" nav link -->
+        <li><a href="index.html#mission">Our Mission</a></li>
+        <li><a href="index.html#goals">Priorities</a></li>
+        <li><a href="index.html#roadmap">Path Forward</a></li>
         <li><a href="page2.html">About</a></li>
     </ul>
 </div>
-<!-- Blue Header with Logo and Title -->
+
+<!-- Header -->
 <header>
     <img src="Assets/birthrightMars_Logo.png" alt="Birthright Mars Logo">
     <h1>Birthright Mars</h1>
     <p>Securing the Future of Martian Born Americans</p>
 </header>
+
 <!-- Banner Section (Our Mission) -->
 <section class="banner-section" id="mission">
     <div class="banner-content">
@@ -339,34 +360,36 @@
         </p>
     </div>
 </section>
+
 <!-- Main Content -->
 <main>
     <!-- Priorities Section -->
-    <section id="goals" style="margin-bottom: 2rem;">
+    <section id="goals">
         <h2>Priorities</h2>
         <div class="goal-groups">
             <div class="goal-group">
                 <h3>Governance</h3>
                 <ul>
-                    <li>Establish a robust legal framework: Develop comprehensive U.S.-based laws that recognize and protect Martian-born citizens as full Americans.</li>
-                    <li>Lead in interplanetary governance: Position the United States as the global standard-bearer in space law and policy, ensuring that American principles guide our expansion into the cosmos.</li>
+                    <li><strong>Establish a robust legal framework:</strong> Develop comprehensive U.S.-based laws that recognize and protect Martian-born citizens as full Americans.</li>
+                    <li><strong>Lead in interplanetary governance:</strong> Position the United States as the global standard-bearer in space law and policy, ensuring that American principles guide our expansion into the cosmos.</li>
                 </ul>
             </div>
             <div class="goal-group">
                 <h3>Sustainability</h3>
                 <ul>
-                    <li>Innovate for self-sufficiency: Drive cutting-edge American technologies that enable sustainable living on Mars and secure a prosperous future.</li>
-                    <li>Enhance quality of life: Guarantee that every Martian settlement benefits from advancements in education, healthcare, and fundamental rights—all built on the foundation of American excellence.</li>
+                    <li><strong>Innovate for self-sufficiency:</strong> Drive cutting-edge American technologies that enable sustainable living on Mars and secure a prosperous future.</li>
+                    <li><strong>Enhance quality of life:</strong> Guarantee that every Martian settlement benefits from advancements in education, healthcare, and fundamental rights—all built on the foundation of American excellence.</li>
                 </ul>
             </div>
             <div class="goal-group">
                 <h3>Community</h3>
                 <ul>
-                    <li>Forge a united frontier: Cultivate a strong, culturally rich American community on Mars that reflects the pioneering values and shared destiny of our nation.</li>
+                    <li><strong>Forge a united frontier:</strong> Cultivate a strong, culturally rich American community on Mars that reflects the pioneering values and shared destiny of our nation.</li>
                 </ul>
             </div>
         </div>
     </section>
+
     <!-- Path Forward Section -->
     <section id="roadmap">
         <h2>Path Forward</h2>
@@ -379,10 +402,12 @@
                 <li><strong>2037 and Beyond:</strong> Continuous American innovation and strategic leadership drive the expansion of Martian settlements, ensuring a dynamic, prosperous future for our nation.</li>
             </ul>
         </div>
+        <!-- Inline roadmap image for mobile only -->
         <img class="roadmap-mobile" src="Assets/roadMap.png" alt="Roadmap">
     </section>
 </main>
-<!-- Footer (Feedback Section remains) -->
+
+<!-- Footer -->
 <footer id="feedback">
     <h3>Feedback</h3>
     <form id="feedback-form">
@@ -395,6 +420,7 @@
         Disclaimer: Birthright Mars is an independent advocacy organization dedicated to advancing America’s interests in space. This website is for informational and entertainment purposes only and is not affiliated with the United States government, NASA, or any official agency.
     </p>
 </footer>
+
 <!-- Feedback Modal -->
 <div id="feedback-modal">
     <div>
@@ -402,7 +428,9 @@
         <button id="close-modal">Close</button>
     </div>
 </div>
+
 <script>
+    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
     menuToggle.addEventListener('click', () => {
@@ -415,6 +443,7 @@
             }
         });
     });
+    // Feedback Modal Functionality
     const feedbackForm = document.getElementById('feedback-form');
     const feedbackModal = document.getElementById('feedback-modal');
     const closeModal = document.getElementById('close-modal');
