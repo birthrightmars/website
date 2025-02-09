@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Birthright Mars - Page 2</title>
+  <title>Birthright Mars - About</title>
 
   <!-- Favicon (SVG) -->
   <link rel="icon" type="image/svg+xml" href="Assets/birthrightMars_fav.svg">
 
   <!-- Open Graph Meta Tags for Social Media Preview -->
-  <meta property="og:title" content="Birthright Mars - Page 2">
-  <meta property="og:description" content="Securing the Future of Martian Born Americans">
+  <meta property="og:title" content="Birthright Mars - About">
+  <meta property="og:description" content="Learn about Birthright Mars and our mission to secure America's destiny in space.">
   <meta property="og:image" content="Assets/birthrightMars_card.png">
   <meta property="og:url" content="https://www.yoursite.com/page2.html">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Birthright Mars - Page 2">
-  <meta name="twitter:description" content="Securing the Future of Martian Born Americans">
+  <meta name="twitter:title" content="Birthright Mars - About">
+  <meta name="twitter:description" content="Learn about Birthright Mars and our mission to secure America's destiny in space.">
   <meta name="twitter:image" content="Assets/birthrightMars_card.png">
 
   <style>
@@ -99,7 +99,6 @@
         margin: 1rem 0;
         text-align: center;
       }
-      /* Changed from .open to .menu-open */
       #nav-links.menu-open {
         display: flex;
       }
@@ -107,20 +106,44 @@
     /* Main Content */
     main {
       padding: 1.25rem 10%;
-      margin-top: 60px; /* Offset for the fixed navbar */
+      margin-top: 60px; /* Offset for fixed navbar */
     }
     main section {
       margin-bottom: 2rem;
     }
+    /* Default h2 styling with border-bottom */
     main section h2 {
       color: #002855;
       border-bottom: 2px solid #004080;
       padding-bottom: 5px;
       font-family: 'Nasalization', Arial, sans-serif;
+      margin-bottom: 1rem;
     }
     main section p {
       margin-top: 1rem;
       font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    /* Circular About Image */
+    .about-image {
+      float: right;
+      width: 400px;
+      height: auto;
+      margin: 50px 0 1rem 1rem; /* for desktop */
+      border-radius: 50%;
+      shape-outside: circle();
+      opacity: 0.8;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .about-image {
+        float: none;
+        display: block;
+        margin: 20px auto 1rem;
+        width: 150px;
+        height: auto;
+      }
     }
     /* Footer */
     footer {
@@ -133,6 +156,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 20px;
     }
     footer input, footer textarea {
       width: 50%;
@@ -156,10 +180,7 @@
     }
     footer p.disclaimer {
       font-size: 0.7rem;
-      margin-top: 10px;
-    }
-    footer p.copyright {
-      padding-top: 30px;  /* Adjust the value as needed */
+      margin-top: 20px;
     }
     /* Feedback Modal */
     #feedback-modal {
@@ -186,6 +207,11 @@
       font-size: 1rem;
       padding: 15px 25px;
     }
+    /* Apply Nasalization to main section headings and footer headings */
+    main section h2,
+    footer h3 {
+      font-family: 'Nasalization', Arial, sans-serif;
+    }
   </style>
 </head>
 <body>
@@ -197,24 +223,35 @@
     <div class="bar"></div>
   </div>
   <ul id="nav-links">
-    <!-- Updated links: these point to index.html for the main sections -->
     <li><a href="index.html#mission">Our Mission</a></li>
     <li><a href="index.html#goals">Priorities</a></li>
     <li><a href="index.html#roadmap">Path Forward</a></li>
-    <!-- Removed the feedback nav link -->
-    <li><a href="page2.html">Get Involved</a></li>
+    <li><a href="page2.html">About</a></li>
   </ul>
 </div>
 
-<!-- Main Content (Placeholder for Page 2) -->
+<!-- Main Content -->
 <main>
   <section>
-    <h2>Coming Soon</h2>
-    <p>This page is under construction. Please check back later for updates.</p>
+    <!-- Circular image floating right -->
+    <img src="Assets/flagMars.png" alt="Flag Mars" class="about-image">
+
+    <!-- About heading using default h2 styling -->
+    <h2>About Birthright Mars</h2>
+
+    <p>Welcome to Birthright Mars – America’s Vanguard in the Final Frontier. Born in 2025 out of a deep commitment to American ingenuity and a proud legacy of exploration, Birthright Mars stands as a clarion call to secure our nation’s destiny in space. Our organization was established by visionary policymakers, industry leaders, and patriots who believe that America’s pioneering spirit is not confined to Earth—it is destined to shine on Mars. Rooted in the bold tradition of American discovery and self-reliance, we emerged as the definitive advocate for extending U.S. rights and values into the cosmos, inspired by the very drive that launched our first astronauts into orbit.</p>
+
+    <p>From our inception, our journey has been defined by rigorous debates over interplanetary citizenship and an unwavering commitment to shaping space policy. We hold a steadfast belief that America must lead on every frontier, including Mars. Our purpose is twofold: to protect American heritage in space by ensuring that every citizen—whether born on Earth or Mars—enjoys the full rights and freedoms that have long defined our nation, and to cement U.S. leadership in the final frontier by establishing robust legal and regulatory frameworks that recognize Martian-born Americans while reinforcing the United States as the global leader in space exploration, innovation, and governance.</p>
+
+    <p>Our mission transcends the mere pursuit of space exploration—it is a bold declaration of America’s resolve to innovate, lead, and preserve our national heritage. We are dedicated to establishing a federally recognized Mars agency that empowers the United States to take decisive action in shaping space policy and interplanetary governance, enacting comprehensive legislation that secures the rights of Martian-born citizens, and investing in breakthrough technologies that promote sustainable living, advanced infrastructure, and self-reliant communities on Mars. By forging strong public-private partnerships, we leverage American entrepreneurship and innovation to drive economic growth and technological advancement beyond Earth.</p>
+
+    <p>Looking ahead, our vision for America’s future on Mars is ambitious and clear. We aim to secure a legal framework that guarantees every Martian-born American is recognized as a full citizen under U.S. law, launch pilot programs in education, healthcare, and infrastructure that lay the foundation for thriving, sustainable Martian communities, and drive technological innovation that bolsters a vibrant space economy and reinforces U.S. global competitiveness. Ultimately, we are committed to building an enduring American legacy on Mars—one that reflects our nation’s core values, independence, and innovative spirit.</p>
+
+    <p>We invite all Americans who share our vision to join us in this historic endeavor. Together, we will ensure that our nation’s legacy of freedom, innovation, and bold exploration continues to light the way—on Earth, on Mars, and beyond.</p>
   </section>
 </main>
 
-<!-- Footer (Feedback Section remains) -->
+<!-- Footer (Feedback Section) -->
 <footer id="feedback">
   <h3>Feedback</h3>
   <form id="feedback-form">
@@ -222,7 +259,7 @@
     <textarea placeholder="Your Message" aria-label="Your Message"></textarea>
     <button type="submit">Submit</button>
   </form>
-  <p class="copyright">&copy; 2025 Birthright Mars. All rights reserved.</p>
+  <p>&copy; 2025 Birthright Mars. All rights reserved.</p>
   <p class="disclaimer">
     Disclaimer: Birthright Mars is an independent advocacy organization dedicated to advancing America’s interests in space. This website is for informational and entertainment purposes only and is not affiliated with the United States government, NASA, or any official agency.
   </p>
@@ -239,7 +276,6 @@
 <script>
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
-  // Toggle the "menu-open" class instead of "open"
   menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('menu-open');
   });
@@ -250,7 +286,6 @@
       }
     });
   });
-
   const feedbackForm = document.getElementById('feedback-form');
   const feedbackModal = document.getElementById('feedback-modal');
   const closeModal = document.getElementById('close-modal');
