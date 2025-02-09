@@ -68,7 +68,7 @@
     #nav-links li a:hover {
       text-decoration: underline;
     }
-    /* Social Links in the Nav Bar */
+    /* Social Links in Nav Bar (Always Visible at Top Right) */
     .social-links {
       display: flex;
       gap: 1rem;
@@ -109,31 +109,7 @@
       #nav-links.menu-open {
         display: flex;
       }
-      /* Optionally hide social links on mobile */
-      .social-links {
-        display: none;
-      }
-    }
-    /* Header */
-    header {
-      background-color: #002855;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 5%;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      margin-top: 60px;
-    }
-    header img {
-      max-height: 300px;
-    }
-    header h1 {
-      font-family: 'Nasalization', Arial, sans-serif;
-      font-size: 3.5rem;
-      margin: 0.5rem 0;
-    }
-    header p {
-      font-size: 1rem;
-      margin: 0;
+      /* Social links remain visible on mobile */
     }
     /* Main Content */
     main {
@@ -154,6 +130,24 @@
       margin-top: 1rem;
       font-size: 1.1rem;
       line-height: 1.5;
+    }
+    /* Circular About Image */
+    .about-image {
+      float: right;
+      width: 300px;
+      height: auto;
+      margin: 50px 0 1rem 1rem;
+      border-radius: 50%;
+      shape-outside: circle();
+      opacity: 0.8;
+    }
+    /* On mobile, center the about image at the top */
+    @media (max-width: 768px) {
+      .about-image {
+        float: none;
+        display: block;
+        margin: 20px auto 1rem;
+      }
     }
     /* Footer */
     footer {
@@ -240,7 +234,7 @@
     <li><a href="index.html#roadmap">Path Forward</a></li>
     <li><a href="page2.html">About</a></li>
   </ul>
-  <!-- Social Links in Top Right -->
+  <!-- Social Links Always Visible in Top Right -->
   <div class="social-links">
     <a href="https://x.com" target="_blank" aria-label="X">
       <img src="Assets/x-twitter.svg" alt="X">
@@ -251,28 +245,24 @@
   </div>
 </div>
 
-<!-- Header -->
-<header>
-  <img src="Assets/birthrightMars_Logo.png" alt="Birthright Mars Logo">
-  <h1>Birthright Mars</h1>
-  <p>Securing the Future of Martian Born Americans</p>
-</header>
-
-<!-- About Section -->
+<!-- Main Content (About Page) -->
 <main>
+  <!-- Circular Flag Image: Floated right on desktop, centered on mobile -->
+  <img src="Assets/flagMars.png" alt="Flag Mars" class="about-image">
+
   <section>
     <h2>About Birthright Mars</h2>
     <p>
-      Welcome to Birthright Mars – America’s Vanguard in the Final Frontier. Born in 2025 out of a deep commitment to American ingenuity and a proud legacy of exploration, Birthright Mars stands as a clarion call to secure our nation’s destiny in space. Our organization was established by visionary policymakers, industry leaders, and patriots who believe that America’s pioneering spirit is not confined to Earth—it is destined to shine on Mars.
+      Welcome to Birthright Mars – America’s Vanguard in the Final Frontier. Born in 2025 out of a deep commitment to American ingenuity and a proud legacy of exploration, Birthright Mars stands as a clarion call to secure our nation’s destiny in space. Our organization was established by visionary policymakers, industry leaders, and patriots who believe that America’s pioneering spirit is not confined to Earth—it is destined to shine on Mars. Rooted in the bold tradition of American discovery and self-reliance, we emerged as the definitive advocate for extending U.S. rights and values into the cosmos, inspired by the very drive that launched our first astronauts into orbit.
     </p>
     <p>
-      Rooted in the bold tradition of American discovery and self-reliance, we emerged as the definitive advocate for extending U.S. rights and values into the cosmos, inspired by the very drive that launched our first astronauts into orbit.
+      From our inception, our journey has been defined by rigorous debates over interplanetary citizenship and an unwavering commitment to shaping space policy. We hold a steadfast belief that America must lead on every frontier, including Mars. Our purpose is twofold: to protect American heritage in space by ensuring that every citizen—whether born on Earth or Mars—enjoys the full rights and freedoms that have long defined our nation, and to cement U.S. leadership in the final frontier by establishing robust legal and regulatory frameworks that recognize Martian-born Americans while reinforcing the United States as the global leader in space exploration, innovation, and governance.
     </p>
     <p>
-      From our inception, our journey has been defined by rigorous debates over interplanetary citizenship and an unwavering commitment to shaping space policy. We hold a steadfast belief that America must lead on every frontier, including Mars.
+      Our mission transcends the mere pursuit of space exploration—it is a bold declaration of America’s resolve to innovate, lead, and preserve our national heritage. We are dedicated to establishing a federally recognized Mars agency that empowers the United States to take decisive action in shaping space policy and interplanetary governance, enacting comprehensive legislation that secures the rights of Martian-born citizens, and investing in breakthrough technologies that promote sustainable living, advanced infrastructure, and self-reliant communities on Mars. By forging strong public-private partnerships, we leverage American entrepreneurship and innovation to drive economic growth and technological advancement beyond Earth.
     </p>
     <p>
-      Our mission transcends the mere pursuit of space exploration—it is a bold declaration of America’s resolve to innovate, lead, and preserve our national heritage. We are dedicated to establishing a federally recognized Mars agency that empowers the United States to take decisive action in shaping space policy and interplanetary governance.
+      Looking ahead, our vision for America’s future on Mars is ambitious and clear. We aim to secure a legal framework that guarantees every Martian-born American is recognized as a full citizen under U.S. law, launch pilot programs in education, healthcare, and infrastructure that lay the foundation for thriving, sustainable Martian communities, and drive technological innovation that bolsters a vibrant space economy and reinforces U.S. global competitiveness. Ultimately, we are committed to building an enduring American legacy on Mars—one that reflects our nation’s core values, independence, and innovative spirit.
     </p>
     <p>
       We invite all Americans who share our vision to join us in this historic endeavor. Together, we will ensure that our nation’s legacy of freedom, innovation, and bold exploration continues to light the way—on Earth, on Mars, and beyond.

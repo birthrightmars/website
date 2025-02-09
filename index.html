@@ -10,7 +10,7 @@
     <meta property="og:title" content="Birthright Mars">
     <meta property="og:description" content="Securing the Future of Martian Born Americans">
     <meta property="og:image" content="Assets/birthrightMars_card.png">
-    <meta property="og:url" content="https://www.yoursite.com">
+    <meta property="og:url" content="https://www.birthrightmars.org">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Birthright Mars">
@@ -68,7 +68,7 @@
         #nav-links li a:hover {
             text-decoration: underline;
         }
-        /* Social Links Container */
+        /* Social Links (Top Right) */
         .social-links {
             display: flex;
             gap: 1rem;
@@ -109,10 +109,7 @@
             #nav-links.menu-open {
                 display: flex;
             }
-            /* Optionally hide social links on mobile */
-            .social-links {
-                display: none;
-            }
+            /* Social links remain visible on mobile */
         }
         /* Header */
         header {
@@ -190,6 +187,14 @@
             margin-top: 1rem;
             font-size: 1.1rem;
             line-height: 1.5;
+        }
+        /* Priorities Section - add spacing between bullet points */
+        .goal-group ul li {
+            margin-bottom: 1rem;
+        }
+        /* Path Forward Section - add spacing between bullet points */
+        .roadmap-content ul li {
+            margin-bottom: 1rem;
         }
         /* Roadmap Section (Path Forward) */
         #roadmap {
@@ -270,6 +275,13 @@
             border-radius: 50%;
             shape-outside: circle();
             opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            .about-image {
+                float: none;
+                display: block;
+                margin: 20px auto 1rem;
+            }
         }
         /* Footer */
         footer {
@@ -356,7 +368,7 @@
         <li><a href="index.html#roadmap">Path Forward</a></li>
         <li><a href="page2.html">About</a></li>
     </ul>
-    <!-- Social Links in Top Right using your provided SVGs -->
+    <!-- Social Links Always Visible at Top Right -->
     <div class="social-links">
         <a href="https://x.com" target="_blank" aria-label="X">
             <img src="Assets/x-twitter.svg" alt="X">
@@ -425,7 +437,7 @@
                 <li><strong>2037 and Beyond:</strong> Continuous American innovation and strategic leadership drive the expansion of Martian settlements, ensuring a dynamic, prosperous future for our nation.</li>
             </ul>
         </div>
-        <!-- Inline roadmap image for mobile only -->
+        <!-- Inline Roadmap Image for Mobile Only -->
         <img class="roadmap-mobile" src="Assets/roadMap.png" alt="Roadmap">
     </section>
 </main>
