@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthright Mars - Proposals</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/birthrightMars_fav.svg">
+
+    <!-- Open Graph & Twitter Meta Tags -->
+    <meta property="og:title" content="Birthright Mars - Proposals">
+    <meta property="og:description" content="Explore proposals for an American Future on Mars.">
+    <meta property="og:image" content="Assets/birthrightMars_card.png">
+    <meta property="og:url" content="https://www.yoursite.com/proposals.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Birthright Mars - Proposals">
+    <meta name="twitter:description" content="Explore proposals for an American Future on Mars.">
+    <meta name="twitter:image" content="Assets/birthrightMars_card.png">
+
+    <style>
+        @font-face {
+            font-family: 'Nasalization';
+            src: url('Fonts/Nasalization Rg.otf') format('opentype');
+        }
+        /* Global Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #002855;
+            scroll-behavior: smooth;
+        }
+        /* Fixed Navigation Bar */
+        #navbar {
+            background-color: #004080;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 2100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+        }
+        /* Navigation Links */
+        #nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        #nav-links li {
+            margin: 0 1rem;
+        }
+        #nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-family: 'Nasalization', Arial, sans-serif;
+        }
+        #nav-links li a:hover {
+            text-decoration: underline;
+        }
+        /* Social Links (Top Right) */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .social-links a img {
+            width: 24px;
+            height: 24px;
+        }
+        /* Hamburger Menu – Mobile */
+        #menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        #menu-toggle .bar {
+            background-color: white;
+            height: 3px;
+            width: 25px;
+            margin: 4px 0;
+        }
+        @media (max-width: 768px) {
+            #menu-toggle {
+                display: flex;
+            }
+            #nav-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #004080;
+                flex-direction: column;
+                display: none;
+            }
+            #nav-links li {
+                margin: 1rem 0;
+                text-align: center;
+            }
+            #nav-links.menu-open {
+                display: flex;
+            }
+        }
+        /* (No header element on this page) */
+        /* Main Content */
+        main {
+            padding: 1.25rem 10%;
+            margin-top: 60px;
+        }
+        main section {
+            margin-bottom: 2rem;
+        }
+        main section h2 {
+            color: #002855;
+            border-bottom: 2px solid #004080;
+            padding-bottom: 5px;
+            font-family: 'Nasalization', Arial, sans-serif;
+            margin-bottom: 1rem;
+        }
+        main section .intro {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        /* Proposals Content */
+        article {
+            margin-bottom: 2rem;
+        }
+        article h3 {
+            font-family: 'Nasalization', Arial, sans-serif;
+            font-size: 1.3rem; /* Reduced font size */
+            color: #002855;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        /* Add bullet points before each proposal title */
+        article h3::before {
+            content: "\2022"; /* Unicode bullet */
+            margin-right: 0.5rem;
+            color: #004080;
+            font-size: 1.3rem;
+        }
+        article p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        /* Footer */
+        footer {
+            background-color: #002855;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        footer input, footer textarea {
+            width: 50%;
+            max-width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        footer button {
+            background-color: #004080;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer button:hover {
+            background-color: white;
+            color: #004080;
+        }
+        footer p.disclaimer {
+            font-size: 0.7rem;
+            margin-top: 10px;
+        }
+        footer p.copyright {
+            padding-top: 30px;
+        }
+        /* Feedback Modal */
+        #feedback-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+        #feedback-modal div {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        #feedback-modal button {
+            font-size: 1rem;
+            padding: 15px 25px;
+        }
+        /* Headings */
+        main section h2,
+        footer h3 {
+            font-family: 'Nasalization', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<!-- Fixed Navigation Bar -->
+<div id="navbar">
+    <div id="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <ul id="nav-links">
+        <li><a href="index.html#mission">Our Mission</a></li>
+        <li><a href="index.html#goals">Priorities</a></li>
+        <li><a href="index.html#roadmap">Path Forward</a></li>
+        <li><a href="page2.html">About</a></li>
+        <li><a href="proposals.html">Proposals</a></li>
+        <li><a href="funding.html">Funding</a></li>
+    </ul>
+    <!-- Social Links Always Visible at Top Right -->
+    <div class="social-links">
+        <a href="https://x.com" target="_blank" aria-label="X">
+            <img src="Assets/x-twitter.svg" alt="X">
+        </a>
+        <a href="https://telegram.org" target="_blank" aria-label="Telegram">
+            <img src="Assets/telegram.svg" alt="Telegram">
+        </a>
+    </div>
+</div>
+
+<!-- (No header element on this page) -->
+
+<!-- Main Content -->
+<main>
+    <section>
+        <h2>Proposals for an American Future on Mars</h2>
+        <p class="intro">
+            At Birthright Mars, we believe that the United States must lead the charge into the final frontier. Our proposals are designed to ensure that American ingenuity, economic strength, and national security define humanity’s expansion into space. Below are our key legislative proposals—real ideas for bills and initiatives that Congress should consider to secure an American legacy on Mars.
+        </p>
+        <article>
+            <h3>Mars Citizenship Act of 2025</h3>
+            <p>
+                We propose a historic bill to recognize every individual born on Mars as a full American citizen under the U.S. Constitution. This act would set a precedent for interplanetary citizenship, guaranteeing that the freedoms and opportunities that have made America great extend to every Martian-born citizen. It is a bold step that cements our nation’s commitment to human rights—even beyond Earth.
+            </p>
+        </article>
+        <article>
+            <h3>National Mars Development Initiative</h3>
+            <p>
+                This proposal calls for a comprehensive federal program dedicated to Mars colonization. By channeling robust investments and forging strategic partnerships with American businesses, we can accelerate the development of sustainable habitats, state‑of‑the‑art technology, and vital infrastructure on Mars. This initiative is about harnessing American innovation to build a future where our nation leads both on Earth and on the red planet.
+            </p>
+        </article>
+        <article>
+            <h3>Mars Economic Empowerment Act</h3>
+            <p>
+                To drive American jobs and fuel economic growth, we propose a series of tax incentives, grants, and low‑interest loans exclusively for U.S. companies pioneering technologies for Mars exploration and settlement. By ensuring that every dollar spent on Mars is spent by American enterprises, we’ll create a booming space economy that directly benefits our industries, workers, and taxpayers.
+            </p>
+        </article>
+        <article>
+            <h3>Martian Security and Defense Act</h3>
+            <p>
+                As we push into new frontiers, national security must remain paramount. This proposal would establish a dedicated strategy for defending American interests on Mars. By creating specialized defense units and investing in advanced security technologies, we can protect our assets in space and prevent any foreign or hostile interference in our quest for a secure future on Mars.
+            </p>
+        </article>
+        <article>
+            <h3>Outer Space Sovereignty and Resource Protection Act</h3>
+            <p>
+                To secure our nation’s long‑term prosperity, we must assert American sovereignty over Martian territories and resources. This proposal aims to reform outdated international space treaties so that all resources extracted on Mars benefit the United States first. By protecting these assets, we not only fuel technological innovation and economic growth but also reaffirm our national leadership in the global arena.
+            </p>
+        </article>
+        <article>
+            <h3>Mars Innovation and Infrastructure Act</h3>
+            <p>
+                This bold proposal calls for a significant federal investment in the research, development, and educational programs necessary to sustain a permanent American presence on Mars. Funding pilot projects, building research centers, and creating infrastructure networks that connect Mars to our homeland will ensure that every step forward in space is powered by American excellence and determination.
+            </p>
+        </article>
+        <article>
+            <h3>Martian Education and Workforce Development Act</h3>
+            <p>
+                This proposal would invest in America’s future by establishing specialized educational and vocational programs focused on aerospace, robotics, engineering, and life‑support technologies for Mars. By partnering with top U.S. universities and technical schools, we’ll create scholarships, training initiatives, and internships that prepare our citizens to lead and innovate in the new frontier. American ingenuity and a well‑trained workforce are essential to maintaining our competitive edge in space.
+            </p>
+        </article>
+        <article>
+            <h3>American Spaceports and Launch Facilities Act</h3>
+            <p>
+                To propel our Mars ambitions, we propose building state‑of‑the‑art spaceports and launch facilities across the United States. These hubs would serve as the launchpads for our Mars missions, stimulate American job growth, and demonstrate our unmatched prowess in rocketry and space travel. By bolstering domestic infrastructure, we ensure that every mission to Mars is powered by American technology and determination.
+            </p>
+        </article>
+        <article>
+            <h3>Martian Trade and Commerce Act</h3>
+            <p>
+                This proposal seeks to establish a comprehensive regulatory framework for trade between Earth and Mars that prioritizes U.S. interests. By protecting American businesses and workers, the act would ensure that resources extracted on Mars—and any resulting technological breakthroughs—directly contribute to our nation’s economic growth. In doing so, we safeguard American prosperity while extending our market dominance into space.
+            </p>
+        </article>
+        <article>
+            <h3>National Martian Research and Development Accelerator Act</h3>
+            <p>
+                Recognizing the critical role of innovation in space exploration, this proposal calls for a significant increase in federal funding dedicated exclusively to Mars-specific research and development. Through strategic partnerships with leading American tech firms and research institutions, we will fast‑track breakthroughs in sustainable habitats, advanced propulsion systems, and life‑support technologies—cementing U.S. leadership in interplanetary innovation.
+            </p>
+        </article>
+        <article>
+            <h3>Martian Land Ownership and Property Rights Act</h3>
+            <p>
+                To spur private investment and development on Mars, we must establish clear property rights. This legislation would define a legal framework for land ownership on the red planet, giving early American settlers and investors the security they need to drive economic activity. Secure property rights are the foundation of a thriving marketplace and a permanent American presence on Mars.
+            </p>
+        </article>
+        <article>
+            <h3>Interplanetary Patent and Innovation Act</h3>
+            <p>
+                American innovation must be protected beyond Earth’s borders. By extending U.S. patent laws to cover technologies developed for Mars colonization, this act will safeguard intellectual property and incentivize groundbreaking research. American companies and inventors can then pursue interplanetary advancements without fear of foreign appropriation—ensuring that our technological edge remains exclusively American.
+            </p>
+        </article>
+        <article>
+            <h3>National Mars Security and Intelligence Act</h3>
+            <p>
+                As we extend our reach into the cosmos, national security must be paramount. This proposal establishes a dedicated Mars Security and Intelligence Unit within the Department of Defense to monitor, prevent, and counter any hostile interference in our Martian endeavors. By proactively securing our assets in space, we protect America’s interests and uphold our sovereignty on the final frontier.
+            </p>
+        </article>
+        <article>
+            <h3>Martian Frontier Infrastructure and Connectivity Act</h3>
+            <p>
+                Reliable communications and robust infrastructure are vital for a successful Martian colony. This act calls for the development of a dedicated satellite network and advanced infrastructural systems that seamlessly connect Martian settlements with each other and with Earth. By ensuring continuous connectivity, we not only foster economic and cultural exchange but also maintain unwavering American leadership across planetary boundaries.
+            </p>
+        </article>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer id="feedback">
+    <h3>Feedback</h3>
+    <form id="feedback-form">
+        <input type="text" placeholder="Name" aria-label="Name">
+        <textarea placeholder="Your Message" aria-label="Your Message"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <p class="copyright">&copy; 2025 Birthright Mars. All rights reserved.</p>
+    <p class="disclaimer">
+        Disclaimer: Birthright Mars is an independent advocacy organization dedicated to advancing America’s interests in space. This website is for informational and entertainment purposes only and is not affiliated with the United States government, NASA, or any official agency.
+    </p>
+</footer>
+
+<!-- Feedback Modal -->
+<div id="feedback-modal">
+    <div>
+        <h3>Thank You For Your Feedback!</h3>
+        <button id="close-modal">Close</button>
+    </div>
+</div>
+
+<script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('menu-open');
+    });
+    document.querySelectorAll('#nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove('menu-open');
+            }
+        });
+    });
+    // Feedback Modal Functionality
+    const feedbackForm = document.getElementById('feedback-form');
+    const feedbackModal = document.getElementById('feedback-modal');
+    const closeModal = document.getElementById('close-modal');
+    feedbackForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        feedbackModal.style.display = 'flex';
+        feedbackForm.reset();
+    });
+    closeModal.addEventListener('click', () => {
+        feedbackModal.style.display = 'none';
+    });
+</script>
+</body>
+</html>
