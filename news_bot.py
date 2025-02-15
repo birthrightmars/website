@@ -8,7 +8,7 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 # Define search parameters
-KEYWORDS = ["trump", "elon musk"]
+KEYWORDS = ["trump", "elon musk", "nasa", "spacex", "doge"]
 # For example, filter articles from the last day
 today = datetime.utcnow()
 from_date = (today - timedelta(days=1)).strftime("%Y-%m-%d")
